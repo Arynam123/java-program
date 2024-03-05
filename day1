@@ -1,0 +1,146 @@
+import java.util.Scanner;
+//jab variable and function are together --encapsulation
+
+
+class Student{
+    private int roll;
+    private String name;nn
+    public Student(int a,String b){
+        name=b;
+        roll=a;
+    }
+    public void set_roll(int r){
+        roll=r;
+    }
+    public void set_name(String n){
+        name=n;
+    }
+    public int get_roll(){
+        return roll;
+    }
+    public String get_name(){
+        return name;
+
+    }    
+}
+
+
+class Dmo{
+   public static void main(String[] args) {
+   /*  Student s=new Student();
+    s.set_roll(31);
+    System.out.println("The roll no is: "+s.get_roll());
+    s.set_name("Aryan");
+    System.out.println("The name is: "+s.get_name());
+    */
+    Student s2=new Student(31,"Vinod");
+    System.out.println("The roll no is: "+s2.get_roll());
+    System.out.println("The name is: "+s2.get_name());
+
+    
+   
+   }
+}   
+class practice{
+    static int sum(int ...arr){
+        int result=0;
+        for(int i=0;i<arr.length;i++){
+            result=result+arr[i];
+        }
+        return result;
+
+    }
+    public static void main(String[] args) {
+        System.out.println("The sum of 1,2,3,4,5,6 is:"+sum(1,2,3,4,5,6));
+    }
+}
+class clr{
+    public static void main(String[] args) {
+        System.out.println("Try the sum of number");
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter The first number: ");
+        int a=sc.nextInt();
+        System.out.print("Enter The second number: ");
+        int b=sc.nextInt();
+        int sum=a+b;
+        System.out.println("The sum of number is: "+sum);
+        
+
+    }
+
+}
+class person {
+    String name;
+    int age;
+
+    // Constructor for the person class
+    person(int a, String n) {
+        age = a;
+        name = n;
+    }
+
+    public void show() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class faculty extends person {
+    String occ;
+    int salary;
+
+    // Constructor for the faculty class
+    faculty(int a, String n, String o, int sal) {
+        super(a, n); // Call the superclass constructor
+        occ = o;
+        salary = sal;
+    }
+
+    public void show() {
+        super.show(); // Call the superclass show method
+        System.out.println("The post of the teacher is: " + occ);
+        System.out.println("The salary of the teacher is: " + salary);
+    }
+}
+class Stud extends person{
+    int roll;
+    String erp;
+    String class_room;
+    Stud(int a,String n,int r,String e,String croom){
+        super(a,n);
+        roll=r;
+        erp=e;
+        class_room=croom;
+    }
+    public void show(){
+        super.show();
+        System.out.println("roll number: "+roll);
+        System.out.println("ERP :"+erp);
+        System.out.println("Class room:"+class_room);
+    }
+
+
+}
+
+class abc {
+    public static void main(String[] args) {
+        faculty f = new faculty(1, "a", "t", 120);
+        f.show();
+        Stud s = new Stud(21,"Aryan",031,"0221cs108","301B");
+        s.show();
+    }
+}
+class vowel_consonant{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the characeter");
+        char c = sc.next().charAt(0);   
+        if(c=='A' || c=='E'||c=='I' || c=='O' || c=='U' || c=='a' || c=='e' || c=='i' ||c=='o'||c=='u'){
+            System.out.println("vowel");
+        }
+        else{
+            System.out.println("Consonant");
+        }
+
+    }
+}
