@@ -1,0 +1,267 @@
+import java.util.Scanner;
+
+class animal1 {
+    public void eat() {
+        System.out.println("All animals eat");
+    }
+}
+
+class Herbi1 extends animal1 {
+    public void walk() {
+        System.out.println("All animals walk");
+    }
+
+    public static void main(String[] args) {
+        Herbi1 h = new Herbi1();
+        h.eat();
+        animal1 a=new animal1();
+        // a.walk() will not work;
+
+    }
+}
+abstract class bank{
+    String name;
+    int age;
+    int accno;
+    public void message(){
+        System.out.println("Alert message from bank!!!");
+    }
+    public void credit(){
+        System.out.println("paisa aya hai");
+    }
+    public void debit(){
+        System.out.println("pasia kat gaya");
+    }
+    public void setinfo(String n, int a,int an){
+        name=n;
+        age=a;
+        accno=an;
+
+    }
+    public void display(){
+        System.out.println("Acc holder name: "+name);
+        System.out.println("Age of acc holder: "+age);
+        System.out.println("Acc number: "+accno);
+    }
+
+}
+class sbi extends bank{
+    public static void main(String[] args) {
+        sbi s=new sbi();
+        s.message();
+        s.credit();
+        s.setinfo("Bhagwan Das Chobey", 60, 4888282);
+        s.display();
+    }
+
+}
+class loan extends sbi{
+
+    public void loan_message(){
+        System.out.println("your loan process has been instilaized");
+        
+    }
+    public static void main(String[] args) {
+    
+        Scanner sc =new Scanner(System.in);
+        System.out.print("Enter your account balance:");
+        double bal=sc.nextDouble();
+        System.out.println();
+        System.out.print("Enter your loan amt: ");
+        double loan=sc.nextDouble();
+        if(loan<0.5*bal){
+
+            System.out.println("Your can get a loan of: "+loan);
+            loan s=new loan();
+            s.message();
+            s.credit();
+            s.setinfo("Bhagwan Das Chobey", 60, 4888282);
+            s.display();
+
+        }
+        else{
+            System.out.println("Sorry Sir you cannot get a loan of "+loan);
+            loan s=new loan();
+            s.message();
+            s.debit();
+            s.setinfo("Bhagwan Das Chobey", 60, 4888282);
+            s.display();
+        }
+
+
+
+    }
+
+}
+interface bnk{
+    void debit();
+    void credit();
+    void loan();
+    void cheque();
+
+}
+interface I1{
+    void debit();
+
+}
+interface I2 extends I1{
+    void credit();
+    
+}
+interface I3 extends I2{
+    void loan();
+    
+}
+interface I4 extends I3{
+    void cheque();
+    
+}
+class sam implements I4{
+    public void debit(){
+        System.out.println("Debited");
+    }
+    public void credit(){
+        System.out.println("Credited");
+    }
+    
+    public void loan(){
+        System.out.println("loan");
+    }
+    
+    public void cheque(){
+        System.out.println("cheque");
+    }
+    public static void main(String[] args) {
+        sam s1=new sam();
+        s1.loan();
+        // for loop
+        for(int i=1;i<=10;i++){
+            System.out.println(i);
+
+        }
+    }
+}
+class run1{
+    public static void main(String[] args) {
+        for(int i=1;i<=10;i++){
+            System.out.println(i);
+        }    
+        
+    
+}
+}
+class lloop{
+    public static void main(String[] args) {
+        for(int i=1;i<=5;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+        System.out.println();    
+        }
+        int m=1;
+        while(m<=5){
+            for(int n=1;n<=m;n++){
+                System.out.print("%");
+            }
+            System.out.println();
+            m++;
+
+        }
+        //printing prime number in java;
+        int c=0;
+        for(int o=1;o<=100;o++){
+            for(int l=1;l<=o;l++){
+                if(o%l==0){
+                    c++;
+                }
+            }
+            if(c==2){
+                System.out.print(o+" ");
+            }
+            c=0;
+        }
+        System.out.println();
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int num1=sc.nextInt();
+        System.out.print("Enter second number: ");
+        int num2=sc.nextInt();
+        System.out.print("Enter third number: ");
+        int num3=sc.nextInt();
+        if(num1>num2 && num1>num3){
+            System.out.println(num1+" is largest");
+        }
+        else if(num2>num1 && num2>num3){
+            System.out.println(num2+" is largest");
+        }
+        
+        if(num3>num1 && num3>num2){
+            System.out.println(num3+" is largest");
+        }
+        //negetive or posti
+        System.out.println("press 1 for addition");
+        System.out.println("press 2 for substraction");
+        System.out.println("press 3 for multiplication");
+        System.out.println("press 4 for division");
+
+        //Scanner s =new Scanner(System.in);
+        System.out.print("Enter your choice");
+        int choice=sc.nextInt();
+        //Scanner sc=new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int n1=sc.nextInt();
+        System.out.print("Enter second number: ");
+        int n2=sc.nextInt();
+        
+        switch(choice){
+            case 1:
+            System.out.println("additon is:"+(n1+n2));
+            break;
+            case 2:
+            System.out.println("Substraction is:"+(n1-n2));
+            break;
+            case 3:
+            System.out.println("Multiplication is:"+(n1*n2));
+            break;
+            case 4:
+            System.out.println("division  is:"+(n1/n2));
+            break;
+
+
+        }  
+        System.out.println(~10); 
+        
+    }
+}
+class pattern{
+    public static void main(String[] args) {
+    for(int i=5;i<=0;i++){
+        for(int j=1;j<i;j++){
+            System.out.print("2");
+        }
+        System.out.println();
+    }
+}
+}  
+
+
+class StudentRollNames{
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+
+        System.out.print("Enter the number of students in the class: ");
+        int numberOfStudents = console.nextInt();
+
+        String[] studentNames = new String[numberOfStudents];
+
+        for (int i = 0; i < studentNames.length; i++) {
+            System.out.print("Enter the name of student " + (i + 1) + ": ");
+            studentNames[i] = console.next();
+        }
+
+        System.out.println("\nStudent roll numbers and names:");
+        for (int i = 0; i < studentNames.length; i++) {
+            System.out.println("Student " + (i + 1) + ": " + studentNames[i]);
+        }
+    }
+}
